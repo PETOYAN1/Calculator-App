@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    body {
+        @apply bg-[#A0D7FF]
+        overflow-hidden
+    }
+    #root {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5em;
+    }
+    .container {
+        background-image: url('./assets/images/shadow.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        @apply bg-[#109DFF] rounded-full hover:bg-[#007aff]
+    }
+    .calculator {
+        background: linear-gradient(white, rgba(184, 184, 184, 0.267));
+    }
+    .operator{
+        background-color: rgba(240, 248, 255, 0.363);
+        @apply hover:bg-slate-200 rounded-3xl text-2xl
+        text-blue-500 font-semibold py-4 px-2 border border-slate-100
+         shadow-inner shadow-current hover:text-blue-700 transition-all
+    }
+    .numbers{
+        background-color: rgba(240, 248, 255, 0.363);
+        @apply rounded-3xl text-2xl
+        text-white font-semibold py-4 px-2
+        shadow-inner shadow-current hover:text-gray-600 transition-all
+    }
+    p {
+        @apply hover:bg-slate-200
+    }
+    .x6, .x9 {
+        background-color: rgba(240, 248, 255, 0.363);
+        text-align: center;
+        line-height: 2.5em !important;
+        transform: rotate(-45deg);
+        @apply w-[62px] h-[62px] ml-[15em] mb-8 rounded-2xl font-bold text-white text-2xl;
+        animation-name: identifier;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-delay: 0s;
+        animation-timing-function: ease;
+    }
+    .x9 {
+        transform: rotate(-70deg);
+        @apply m-0 relative left-[-35%] top-20
+    }
+    .x6:hover, .x9:hover {
+        background-color: rgb(123 132 145 / 23%);
+    }
+    .box, .box2 {
+        background-color: #4bb2fca8;
+        @apply rounded-[50%] text-2xl h-6 w-6
+        text-white hover:bg-blue-500;
+        animation-name: backgroundColor;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-delay: 0s;
+        animation-timing-function: linear;
+    }
+    .darkMode {
+        @apply  absolute right-[30px] top-[25px] w-9 h-9 p-[7px] 
+        rounded-full bg-slate-100 md:border-solid
+         border fill-gray-500 hover:fill-blue-600
+        cursor-pointer
+        hover:md:-rotate-90 transition duration-300 ease-in-out;
+    }
+    @keyframes identifier {
+        from {
+            transform: rotate(-360deg);
+        } to {
+            transform: rotate(0deg);
+        }
+    }
+    @keyframes backgroundColor {
+        0% {
+            background-color: #fc4ba47c;
+        } 
+        25% {
+            background-color: #109DFF;
+        }
+        50% {
+            background-color: #10ffeb;
+        }
+        75% {
+            background-color: #103cff91;
+        }
+        100% {
+            background-color: #109DFF;
+        }
+    }
+}
