@@ -58,12 +58,12 @@ function App() {
   return (
     <>
     <img className='absolute w-[374px] h-[812px] left-[-5em] top-[-40rem]' src={calculator} alt="calculator" />
-    <img className='absolute w-[374px] h-[812px] right-[-9em] top-[35em]' src={dark} alt="dark" />
+    <img className='w-[374px] h-[812px] max-sm:hidden right-[-9em] top-[35em] fixed max-lg:right-[-4em] max-lg:w-[200px] max-lg:h-[26em] max-lg:top-[34em]' src={dark} alt="dark" />
     <div className="article flex flex-col items-start">
         <span className='x6'>6</span>
         <span className='box ml-[12.4em]'></span>
         <img className='my-8' src={logo} alt="logo" /><br/>
-        <span className='bg-[#2CA8FF] hover:bg-blue-500 rounded-2xl font-bold w-40 text-white px-3 py-2 inline-block mx-0'>DESIGN Tailwind</span><br/>
+        <span className='bg-[#2CA8FF] design hover:bg-blue-500 rounded-2xl font-bold w-40 text-white px-3 py-2 inline-block mx-0'>DESIGN Tailwind</span><br/>
         <span className='text-start text-4xl w-full block font-bold text-gray-800'>
           Tailwind:Calculator <br/> App User Interface<br/>Design.
         <img className='w-10 h-10 inline' src={rocket} alt="rocket" />
@@ -72,14 +72,14 @@ function App() {
         <span className='box2'></span>
     </div>
     <div className="container h-[600px] w-[600px] flex flex-col items-center gap-10 px-3 py-10">
-        <div className='calculator flex gap-8 flex-col justify-end z-10 px-4 py-4 max-w-[20em] h-full rounded-[40px]'>
+        <div className='calculator'>
           {
               theme === 'light'?
               <MoonIcon onClick={toggleTheme} className='darkMode'/>
               :
               <SunIcon onClick={toggleTheme} className='darkMode'/>
           }
-          <input placeholder='0' className='bg-transparent rounded-md my-9 p-4 h-10 w-full text-5xl font-semibold text-[#303136] text-right tracking-wider shadow-current' type="text" value={result} disabled/>
+          <input placeholder='0' className='max-lg:text-4xl max-lg:m-0 bg-transparent rounded-md my-9 p-4 h-10 w-full text-5xl font-semibold text-[#303136] text-right tracking-wider shadow-current' type="text" value={result} disabled/>
         <div className='grid grid-cols-4 gap-2'>
           <button onClick={clearAll} className='operator' type="button">AC</button>
           <button onClick={deleteOne} className='operator' type="button">DEL</button>

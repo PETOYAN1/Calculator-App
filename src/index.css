@@ -3,9 +3,12 @@
 @tailwind utilities;
 
 @layer components{
+    #root {
+        @apply max-lg:flex-col
+    }
     body {
         @apply bg-[#A0D7FF]
-        overflow-hidden
+        overflow-x-hidden
     }
     #root {
         max-width: 1280px;
@@ -24,6 +27,8 @@
     }
     .calculator {
         background: linear-gradient(white, rgba(184, 184, 184, 0.267));
+        @apply flex gap-8 flex-col justify-end z-10 px-4 py-4 max-w-[20em] h-full rounded-[40px]
+        max-lg:w-[70%]
     }
     .operator{
         background-color: rgba(240, 248, 255, 0.363);
@@ -101,3 +106,48 @@
         }
     }
 }
+@media screen and (max-width: 450px) {
+    #root {
+      gap: 0;
+      padding: 0;
+    }
+    .flex {
+        justify-content: center;
+    }
+    .x6 {
+      margin-left: 13em;
+      margin-top: 2em;
+    }
+    .calculator {
+        height: 90%;
+        margin-top: 2em;
+    }
+}
+@media screen and (max-width: 412px) {
+    body {
+        overflow-x: hidden;
+    }
+    #root {
+        gap: 0;
+    }
+    .container {
+        padding-right: 0;
+    }
+    .x6 {
+        margin-left: 13.5em;
+        margin-top: 3.5em;
+    }
+    .text-start {
+        text-align: center;
+    }
+    .design {
+        margin-left: 2.5em;
+    }
+  }
+  @media screen and (max-width: 412px) {
+      .my-8 {
+          margin: 0 auto;
+          margin-top: 2em;
+          width: 80%;
+      }
+  }
